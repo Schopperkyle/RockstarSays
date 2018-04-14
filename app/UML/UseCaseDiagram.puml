@@ -1,0 +1,28 @@
+@startuml
+
+title RockstarSays Use Case Diagram
+
+actor User
+
+rectangle {
+
+usecase "Start Application" as UC1
+usecase "Choose Difficulty" as UC2
+usecase "Play Game" as UC3
+usecase "Start Over" as UC4
+usecase "Win!" as UC5
+
+User -- UC1
+
+UC1 ..> (UC2): <<includes>>
+UC1 ..> (UC3): <<includes>>
+UC2 ..> (UC3): <<extends>>
+UC3 ..> (UC5): <<extends>>
+UC3 ..> (UC4): <<extends>>
+UC4 ..> (UC1): <<includes>>
+
+}
+
+
+
+@enduml
