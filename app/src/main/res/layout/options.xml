@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#262625">
+
+    <TextView
+        android:id="@+id/titleOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+        android:textSize="45sp"
+        android:layout_marginTop="65dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#cccccc"/>
+
+    <TextView
+        android:id="@+id/selectDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Difficulty"
+        android:textSize="30sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="left"
+        android:textColor="#cccccc"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/Easy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easy"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#cccccc"
+            android:buttonTint="#cccccc"/>
+
+        <RadioButton
+            android:id="@+id/Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#cccccc"
+            android:buttonTint="#cccccc"/>
+
+        <RadioButton
+            android:id="@+id/Hard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hard"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#cccccc"
+            android:buttonTint="#cccccc"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/SaveOptions"
+        android:layout_width="130dip"
+        android:layout_height="60dip"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Save"
+        android:textSize="20sp"
+        android:background="#cf5300"/>
+
+</LinearLayout>
