@@ -1,0 +1,42 @@
+@startuml
+
+title RockstarSays SSD
+actor User
+participant Slash
+
+group Rockstar Application
+User -> Slash: Start
+note right: With Prolog Screen
+User <- Slash: Application Starts
+
+alt Choose/Select Difficulty
+User -> Slash: Selcts Difficulty
+note right: Easy, Medium, Hard
+User <- Slash: Starts Game with Selected Difficulty
+end
+
+loop User Selcts Button Sequence
+User <- Slash: Plays a Tone
+User -> Slash: Selects Appropriate Tone (Button)
+
+alt Win
+User -> Slash: Reaches Predetermined Score
+note right: Determined by Difficulty
+User <- Slash: Displays Winning Toast
+end
+
+alt Lose
+User -> Slash: Selects Wrong Tone (Button)
+User <- Slash: Displays Score
+end
+
+end
+
+opt Start Over
+User <- Slash: Presents Option to Start Over
+User -> Slash: User Option
+end
+
+end
+
+@enduml
