@@ -1,9 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.auburn.eng.csse.comp3710.spring2018.Rockstars.MainActivity">
+    android:orientation="vertical"
+    android:background="#262625"
+    tools:context=".MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/RedButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="145dp"
+        android:background="#ff0000" />
+
+    <Button
+        android:id="@+id/blueButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_alignStart="@+id/greenButton"
+        android:layout_alignTop="@+id/RedButton"
+        android:background="#000080" />
+
+    <Button
+        android:id="@+id/yellowButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/RedButton"
+        android:layout_marginBottom="154dp"
+        android:background="#ffff00" />
+
+    <Button
+        android:id="@+id/greenButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/yellowButton"
+        android:layout_marginEnd="32dp"
+        android:background="#006400" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="105dp"
+        android:text="Score: "
+        android:textColor="#cccccc"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/StartOverButton"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="Start Over"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/turnDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:text="your turn"
+        android:textColor="#cccccc"
+        android:textSize="19sp" />
+
+
+</RelativeLayout>
