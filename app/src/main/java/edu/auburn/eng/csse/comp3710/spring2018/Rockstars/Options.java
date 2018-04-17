@@ -3,20 +3,10 @@ package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.os.Handler;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.Toast;
-import android.widget.TextView;
-import android.os.CountDownTimer;
-
-import java.util.Random;
+import android.widget.*;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Options extends AppCompatActivity {
 
@@ -24,5 +14,40 @@ public class Options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options);
+
+        Button save;
+        save = (Button) findViewById(R.id.SaveOptions);
+        save.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+
+        });
+    }
+
+    public void onOptionSelected(View v) {
+
+        boolean selected;
+        selected = ((RadioButton) v).isChecked();
+        switch (v.getId()) {
+            case R.id.Easy:
+                if (selected) {
+                    // MainActivity.s = 2;
+                    break;
+                }
+            case R.id.Medium:
+                if (selected) {
+                    // MainActivity.s = 3;
+                    break;
+                }
+            case R.id.Hard:
+                if (selected) {
+                    // MainActivity.s = 4;
+                    break;
+                }
+        }
     }
 }
+
