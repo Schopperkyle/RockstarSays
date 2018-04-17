@@ -6,7 +6,6 @@
     android:background="#262625"
     tools:context=".MainActivity">
 
-
     <Button
         android:id="@+id/RedButton"
         android:layout_width="125dp"
@@ -77,3 +76,4 @@
 
 
 </RelativeLayout>
+
