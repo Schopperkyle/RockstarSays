@@ -32,7 +32,7 @@ public class MainMenu extends AppCompatActivity {
 
             @Override
             public void onClick(View arg) {
-                Intent optionsMenu = new Intent(MainMenu.this, MainActivity.class);
+                Intent optionsMenu = new Intent(MainMenu.this, Options.class);
                 startActivity(optionsMenu);
             }
         });

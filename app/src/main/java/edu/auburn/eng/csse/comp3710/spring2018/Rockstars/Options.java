@@ -34,17 +34,17 @@ public class Options extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.Easy:
                 if (selected) {
-                    // MainActivity.s = 2;
+                    MainActivity.difficulty = 2;
                     break;
                 }
             case R.id.Medium:
                 if (selected) {
-                    // MainActivity.s = 3;
+                    MainActivity.difficulty = 3;
                     break;
                 }
             case R.id.Hard:
                 if (selected) {
-                    // MainActivity.s = 4;
+                    MainActivity.difficulty = 4;
                     break;
                 }
         }
