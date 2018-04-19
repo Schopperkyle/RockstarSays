@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="65dp"
-        android:background="@drawable/redHighlight" />
+        android:background="@drawable/red_highlight" />
 
     <Button
         android:id="@+id/blueButton"
@@ -22,7 +22,7 @@
         android:layout_height="150dp"
         android:layout_alignStart="@+id/greenButton"
         android:layout_alignTop="@+id/redButton"
-        android:background="@drawable/blueHighlight" />
+        android:background="@drawable/blue_highlight" />
 
     <Button
         android:id="@+id/yellowButton"
@@ -30,7 +30,7 @@
         android:layout_height="150dp"
         android:layout_alignStart="@+id/redButton"
         android:layout_marginTop="220dp"
-        android:background="@drawable/yellowHighlight" />
+        android:background="@drawable/yellow_highlight" />
 
     <Button
         android:id="@+id/greenButton"
@@ -39,7 +39,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/yellowButton"
         android:layout_marginEnd="50dp"
-        android:background="@drawable/greenHighlight" />
+        android:background="@drawable/green_highlight" />
 
     <TextView
         android:id="@+id/score"
