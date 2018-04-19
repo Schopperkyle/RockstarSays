@@ -3,12 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="normalRed">#ff0000</color>
-    <color name="highlightRed">#F94141</color>
+    <color name="highlightRed">#FF9999</color>
     <color name="normalBlue">#0000FF</color>
     <color name="highlightBlue">#6F93F6</color>
-    <color name="normalYellow">#FFFF00</color>
-    <color name="highlightYellow">#FDF97D</color>
+    <color name="normalYellow">#CCCC00</color>
+    <color name="highlightYellow">#FFFF99</color>
     <color name="normalGreen">#008000</color>
     <color name="highlightGreen">#00CC00</color>
 </resources>
