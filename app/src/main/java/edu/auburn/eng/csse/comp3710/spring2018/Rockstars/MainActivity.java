@@ -3,6 +3,7 @@ package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -59,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
                     endGame();
                 }
             }
@@ -76,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
                     endGame();
                 }
             }
@@ -93,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
                     endGame();
                 }
             }
@@ -110,7 +117,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
                     endGame();
                 }
             }
@@ -178,7 +187,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void endGame() {
 
-        Toast.makeText(getApplicationContext(), "Score: " + (highScore - 1), Toast.LENGTH_LONG).show();
+        Toast toast = Toast.makeText(getApplicationContext(), "Score: " + (highScore - 1), Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+        toast.show();
+
         initialCount = 0;
         for (int i = 0; i < curLevel; i++) {
             gameLength[i] = 0;
@@ -192,8 +204,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.StartOverButton).setEnabled(true);
         TextView restart = (TextView) findViewById(R.id.turnDisplay);
         restart.setText("Click Start Over to Start New Game");
-        TextView score = (TextView) findViewById(R.id.score);
-        score.setText("Score: ");
     }
 
     public void highlightAll() {
