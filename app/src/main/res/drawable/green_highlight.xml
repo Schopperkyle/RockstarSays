@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/highlight_green"
+    <item android:drawable="@color/highlightGreen"
         android:state_pressed="true"/>
-    <item android:drawable="@drawable/normal_green"/>
+    <item android:drawable="@color/normalGreen"/>
 
 </selector>
