@@ -18,13 +18,21 @@ public class MainActivity extends AppCompatActivity {
 
     public static int difficulty = 3;
     public int level = 1;
+    public int curLevel = level - 1;
+    public int count = 0;
+    public int initialCount = 0;
+    public boolean delay1 = true;
     Random r = new Random();
+
+    int [] gameLength = new int [1000];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button startOver = (Button) findViewById(R.id.StartOverButton);
+        startOver.performClick();
 
     }
 
@@ -66,5 +74,47 @@ public class MainActivity extends AppCompatActivity {
                 ((Button) findViewById(R.id.greenButton)).setPressed(false);
             }
         }, 1400/difficulty);
+    }
+
+    public void highlightAll() {
+
+        new CountDownTimer( (((1400/difficulty) + 1000/difficulty) * (curLevel + 2)), ((1400/difficulty) + 1000/difficulty)) {
+
+            public void onTick(long time) {
+                if (delay1) {
+                    delay1 = false;
+                }
+                else if (gameLength[count] == 1) {
+                    highlightRed();
+                    count++;
+                }
+                else if (gameLength[count] == 2) {
+                    highlightBlue();
+                    count++;
+                }
+                else if (gameLength[count] == 3) {
+                    highlightYellow();
+                    count++;
+                }
+                else if (gameLength[count] == 4) {
+                    highlightGreen();
+                    count++;
+                }
+            }
+
+            public void onFinish() {
+
+                count = 0;
+                initialCount = 0;
+                delay1 = true;
+                ((Button) findViewById(R.id.redButton)).setEnabled(true);
+                ((Button) findViewById(R.id.blueButton)).setEnabled(true);
+                ((Button) findViewById(R.id.yellowButton)).setEnabled(true);
+                ((Button) findViewById(R.id.greenButton)).setEnabled(true);
+                TextView turn = (TextView) findViewById(R.id.turnDisplay);
+                turn.setText("Your Turn!");
+            }
+
+        }.start();
     }
 }
