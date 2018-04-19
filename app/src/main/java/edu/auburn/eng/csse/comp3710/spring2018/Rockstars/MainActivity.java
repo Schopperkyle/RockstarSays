@@ -3,7 +3,6 @@ package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public int curLevel = level - 1;
     public int count = 0;
     public int initialCount = 0;
+    public int highScore = 0;
     public boolean delay1 = true;
     Random r = new Random();
 
@@ -34,6 +34,87 @@ public class MainActivity extends AppCompatActivity {
         Button startOver = (Button) findViewById(R.id.StartOverButton);
         startOver.performClick();
 
+    }
+
+    public void start(View v) {
+
+        findViewById(R.id.StartOverButton).setEnabled(false);
+        for (int i = 0; i < level - 1; i++) {
+            gameLength[0] = r.nextInt(4) + 1;
+        }
+        nextLevel();
+        Button red = ((Button) findViewById(R.id.redButton));
+        Button blue = ((Button) findViewById(R.id.blueButton));
+        Button yellow = ((Button) findViewById(R.id.yellowButton));
+        Button green = ((Button) findViewById(R.id.greenButton));
+
+        red.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (gameLength[initialCount] == 1) {
+                    initialCount++;
+                    if (initialCount == curLevel) {
+                        nextLevel();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    endGame();
+                }
+            }
+        });
+
+        blue.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (gameLength[initialCount] == 2) {
+                    initialCount++;
+                    if (initialCount == curLevel) {
+                        nextLevel();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    endGame();
+                }
+            }
+        });
+
+        yellow.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (gameLength[initialCount] == 3) {
+                    initialCount++;
+                    if (initialCount == curLevel) {
+                        nextLevel();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    endGame();
+                }
+            }
+        });
+
+        green.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (gameLength[initialCount] == 4) {
+                    initialCount++;
+                    if (initialCount == curLevel) {
+                        nextLevel();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    endGame();
+                }
+            }
+        });
     }
 
     public void highlightRed() {
@@ -74,6 +155,45 @@ public class MainActivity extends AppCompatActivity {
                 ((Button) findViewById(R.id.greenButton)).setPressed(false);
             }
         }, 1400/difficulty);
+    }
+
+    public void nextLevel() {
+
+        gameLength[curLevel] = r.nextInt(4) + 1;
+
+        curLevel++;
+        count = 0;
+        TextView turn = (TextView) findViewById(R.id.turnDisplay);
+        turn.setText("Slash's Turn!");
+        ((Button) findViewById(R.id.redButton)).setEnabled(false);
+        ((Button) findViewById(R.id.blueButton)).setEnabled(false);
+        ((Button) findViewById(R.id.yellowButton)).setEnabled(false);
+        ((Button) findViewById(R.id.greenButton)).setEnabled(false);
+        highlightAll();
+        highScore++;
+        TextView scoreDisplay = (TextView) findViewById(R.id.score);
+        scoreDisplay.setText("Score: " + (highScore - 1));
+
+    }
+
+    public void endGame() {
+
+        Toast.makeText(getApplicationContext(), "Score: " + (highScore - 1), Toast.LENGTH_LONG).show();
+        initialCount = 0;
+        for (int i = 0; i < curLevel; i++) {
+            gameLength[i] = 0;
+        }
+        curLevel = level - 1;
+        highScore = 0;
+        ((Button) findViewById(R.id.redButton)).setEnabled(false);
+        ((Button) findViewById(R.id.blueButton)).setEnabled(false);
+        ((Button) findViewById(R.id.yellowButton)).setEnabled(false);
+        ((Button) findViewById(R.id.greenButton)).setEnabled(false);
+        findViewById(R.id.StartOverButton).setEnabled(true);
+        TextView restart = (TextView) findViewById(R.id.turnDisplay);
+        restart.setText("Click Start Over to Start New Game");
+        TextView score = (TextView) findViewById(R.id.score);
+        score.setText("Score: ");
     }
 
     public void highlightAll() {
