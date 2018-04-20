@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void start(View v) {
 
-        findViewById(R.id.StartOverButton).setEnabled(false);
+        findViewById(R.id.StartOverButton).setVisibility(View.INVISIBLE);
         for (int i = 0; i < level - 1; i++) {
             gameLength[0] = r.nextInt(4) + 1;
         }
@@ -193,6 +193,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void endGame() {
+
+        Button startOver = (Button) findViewById(R.id.StartOverButton);
+        startOver.setVisibility(View.VISIBLE);
 
         Toast toast = Toast.makeText(getApplicationContext(), "Score: " + (highScore - 1), Toast.LENGTH_LONG);
         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
