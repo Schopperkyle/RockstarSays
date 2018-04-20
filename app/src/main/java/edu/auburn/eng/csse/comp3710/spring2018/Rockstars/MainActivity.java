@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public int count = 0;
     public int initialCount = 0;
     public int highScore = 0;
+    public int greatestScore = 0;
     public boolean delay1 = true;
     Random r = new Random();
 
@@ -180,8 +181,14 @@ public class MainActivity extends AppCompatActivity {
         ((Button) findViewById(R.id.greenButton)).setEnabled(false);
         highlightAll();
         highScore++;
+        if (highScore >= greatestScore) {
+            greatestScore = highScore;
+        }
         TextView scoreDisplay = (TextView) findViewById(R.id.score);
         scoreDisplay.setText("Score: " + (highScore - 1));
+
+        TextView highScoreDisplay = (TextView) findViewById(R.id.highscore);
+        highScoreDisplay.setText("High Score: " + (greatestScore - 1));
 
     }
 
