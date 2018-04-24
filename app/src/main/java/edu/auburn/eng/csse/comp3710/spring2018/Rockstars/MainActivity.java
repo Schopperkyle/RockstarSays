@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button startOver = (Button) findViewById(R.id.StartOverButton);
         startOver.performClick();
-
     }
 
     public void start(View v) {

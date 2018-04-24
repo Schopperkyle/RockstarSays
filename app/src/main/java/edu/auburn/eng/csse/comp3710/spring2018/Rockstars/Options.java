@@ -3,7 +3,6 @@ package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.view.View;
 import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;

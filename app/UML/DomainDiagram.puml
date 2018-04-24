@@ -1,0 +1,32 @@
+@startuml
+
+title RockstarSays Domain Model
+
+
+class SplashScreen {
+
+}
+class MainGame {
+start
+highlightRed
+highlightBLue
+highlightYellow
+highlightGreen
+nextLevel
+endGame
+highlightAll
+}
+class MainMenu {
+
+}
+class Options {
+onItemSelected
+}
+
+SplashScreen "1" *-- "1" MainMenu: Interacts With >
+MainMenu "1" *-- "1" MainGame: Contains >
+MainMenu "1" *-- "1" Options: Contains >
+MainGame "1" *-- "1" MainMenu: Interacts With >
+Options "1" *-- "1" MainMenu: Interacts With >
+
+@enduml
