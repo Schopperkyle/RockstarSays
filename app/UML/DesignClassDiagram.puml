@@ -31,10 +31,10 @@ class Options {
 onOptionSelected()
 }
 
-SplashScreen "1" *-- "1" MainMenu: Interacts With >
-MainMenu "1" *-- "1" MainGame: Contains >
-MainMenu "1" *-- "1" Options: Contains >
-MainGame "1" *-- "1" MainMenu: Interacts With >
-Options "1" *-- "1" MainMenu: Interacts With >
+SplashScreen "1" *-- "1" MainMenu : preludes >
+MainMenu "1" *-- "1" MainGame : starts >
+MainMenu "1" *-- "1" Options : displays >
+MainGame "1" *-- "1" MainMenu : exits to >
+Options "1" *-- "1" MainMenu : exits to >
 
 @enduml
