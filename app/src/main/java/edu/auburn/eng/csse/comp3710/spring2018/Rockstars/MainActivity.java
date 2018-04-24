@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
     int [] gameLength = new int [1000];
 
+    static final String HIGHSCORE = "";
+    static final String GREATESTSCORE = "";
+    static final String GAMELENGTH = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,25 @@ public class MainActivity extends AppCompatActivity {
         Button startOver = (Button) findViewById(R.id.StartOverButton);
         startOver.performClick();
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putInt(HIGHSCORE, highScore);
+        savedInstanceState.putInt(GREATESTSCORE, greatestScore);
+        savedInstanceState.putIntArray(GAMELENGTH, gameLength);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        highScore = savedInstanceState.getInt(HIGHSCORE);
+        greatestScore = savedInstanceState.getInt(GREATESTSCORE);
+        gameLength = savedInstanceState.getIntArray(GAMELENGTH);
+    }
+
 
     public void start(View v) {
 
