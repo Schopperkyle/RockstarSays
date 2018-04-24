@@ -1,0 +1,40 @@
+@startuml
+
+title RockstarSays Domain Model
+
+
+class SplashScreen {
+
+}
+class MainGame {
+difficulty
+level
+curLevel
+count
+initialCount
+highScore
+greatestScore
+gameLength
+start()
+highlightRed()
+highlightBLue()
+highlightYellow()
+highlightGreen()
+nextLevel()
+endGame()
+highlightAll()
+}
+class MainMenu {
+options
+}
+class Options {
+onOptionSelected()
+}
+
+SplashScreen "1" *-- "1" MainMenu: Interacts With >
+MainMenu "1" *-- "1" MainGame: Contains >
+MainMenu "1" *-- "1" Options: Contains >
+MainGame "1" *-- "1" MainMenu: Interacts With >
+Options "1" *-- "1" MainMenu: Interacts With >
+
+@enduml
