@@ -48,5 +48,33 @@ public class Options extends AppCompatActivity {
                 }
         }
     }
+
+    public void sound(View v) {
+
+        MainMenu m = new MainMenu();
+
+        boolean selected;
+        selected = ((RadioButton) v).isChecked();
+        switch (v.getId()) {
+            case R.id.Enable:
+                if (selected) {
+                    if(!m.ring.isPlaying()) {
+                        m.ring.start();
+                    }
+                    else {
+                        m.ring.pause();
+                    }
+                }
+            case R.id.Disable:
+                if (selected) {
+                    if(m.ring.isPlaying()) {
+                        m.ring.pause();
+                    }
+                    else {
+                        m.ring.start();
+                    }
+                }
+        }
+    }
 }
 
