@@ -214,6 +214,12 @@ public class MainActivity extends AppCompatActivity {
         TextView highScoreDisplay = (TextView) findViewById(R.id.highscore);
         highScoreDisplay.setText("High Score: " + (greatestScore - 1));
 
+        if (curLevel == 6) {
+            Toast toast = Toast.makeText(getApplicationContext(), "You Win!", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+            toast.show();
+            endGame();
+        }
     }
 
     public void endGame() {
