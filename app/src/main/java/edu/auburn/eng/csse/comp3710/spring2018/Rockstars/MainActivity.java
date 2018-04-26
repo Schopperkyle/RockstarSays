@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.TextView;
 import android.os.CountDownTimer;
+import android.media.MediaPlayer;
 
 import java.util.Random;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button startOver = (Button) findViewById(R.id.StartOverButton);
         startOver.performClick();
+
     }
 
     @Override
@@ -58,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         greatestScore = savedInstanceState.getInt(GREATESTSCORE);
         gameLength = savedInstanceState.getIntArray(GAMELENGTH);
     }
-
 
     public void start(View v) {
 
