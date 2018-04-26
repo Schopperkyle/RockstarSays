@@ -14,6 +14,46 @@ public class Options extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options);
 
+        RadioButton enable = (RadioButton) findViewById(R.id.Enable);
+        enable.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                MainMenu m = new MainMenu();
+
+                boolean selected;
+                selected = ((RadioButton) v).isChecked();
+
+                if (selected) {
+                    if (!m.ring.isPlaying()) {
+                        m.ring.start();
+                    } else {
+                        m.ring.pause();
+                    }
+                }
+            }
+        });
+
+        RadioButton disable = (RadioButton) findViewById(R.id.Disable);
+        disable.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                MainMenu m = new MainMenu();
+
+                boolean selected;
+                selected = ((RadioButton) v).isChecked();
+
+                if (selected) {
+                    if (m.ring.isPlaying()) {
+                        m.ring.pause();
+                    } else {
+                        m.ring.start();
+                    }
+                }
+            }
+        });
+        
         Button save;
         save = (Button) findViewById(R.id.SaveOptions);
         save.setOnClickListener(new View.OnClickListener() {
@@ -45,34 +85,6 @@ public class Options extends AppCompatActivity {
                 if (selected) {
                     MainActivity.difficulty = 4;
                     break;
-                }
-        }
-    }
-
-    public void sound(View v) {
-
-        MainMenu m = new MainMenu();
-
-        boolean selected;
-        selected = ((RadioButton) v).isChecked();
-        switch (v.getId()) {
-            case R.id.Enable:
-                if (selected) {
-                    if(!m.ring.isPlaying()) {
-                        m.ring.start();
-                    }
-                    else {
-                        m.ring.pause();
-                    }
-                }
-            case R.id.Disable:
-                if (selected) {
-                    if(m.ring.isPlaying()) {
-                        m.ring.pause();
-                    }
-                    else {
-                        m.ring.start();
-                    }
                 }
         }
     }
