@@ -2,13 +2,11 @@ package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import java.io.IOException;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -47,8 +45,10 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(optionsMenu);
             }
         });
-
     }
+
+    // Starts music
+
     public void playMusic(View v) {
 
         ring = MediaPlayer.create(MainMenu.this,R.raw.ring);

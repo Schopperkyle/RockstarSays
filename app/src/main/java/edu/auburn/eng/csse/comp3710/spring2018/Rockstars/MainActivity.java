@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -42,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Handles pauses in the game
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         gameLength = savedInstanceState.getIntArray(GAMELENGTH);
     }
 
+    // Starts game
+
     public void start(View v) {
 
         findViewById(R.id.StartOverButton).setVisibility(View.INVISIBLE);
@@ -71,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         Button blue = ((Button) findViewById(R.id.blueButton));
         Button yellow = ((Button) findViewById(R.id.yellowButton));
         Button green = ((Button) findViewById(R.id.greenButton));
+
+        // Button listeners
 
         red.setOnClickListener(new OnClickListener() {
             @Override
@@ -149,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Methods to highlight various buttons
+
     public void highlightRed() {
         ((Button) findViewById(R.id.redButton)).setPressed(true);
         Handler h = new Handler();
@@ -189,6 +196,11 @@ public class MainActivity extends AppCompatActivity {
         }, 1400/difficulty);
     }
 
+    // Determines highlighted button
+    // Deactivates buttons
+    // Determines score
+    // Sets high score
+
     public void nextLevel() {
 
         gameLength[curLevel] = r.nextInt(4) + 1;
@@ -220,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Terminates Game
+
     public void endGame() {
 
         Button startOver = (Button) findViewById(R.id.StartOverButton);
@@ -243,6 +257,8 @@ public class MainActivity extends AppCompatActivity {
         TextView restart = (TextView) findViewById(R.id.turnDisplay);
         restart.setText("Click Start Over to Start New Game");
     }
+
+    // Determines button to highlight
 
     public void highlightAll() {
 
@@ -269,6 +285,8 @@ public class MainActivity extends AppCompatActivity {
                     count++;
                 }
             }
+
+            // Allows buttons to be selected
 
             public void onFinish() {
 

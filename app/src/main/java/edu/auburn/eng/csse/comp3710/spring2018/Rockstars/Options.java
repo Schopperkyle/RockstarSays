@@ -1,12 +1,10 @@
 package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.*;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Options extends AppCompatActivity {
 
@@ -58,6 +56,8 @@ public class Options extends AppCompatActivity {
 
         });
     }
+
+    // Determines difficulty
 
     public void onOptionSelected(View v) {
 
