@@ -1,6 +1,6 @@
 @startuml
 
-title RockstarSays Domain Model
+title RockstarSays Design Class Diagram
 
 
 class SplashScreen {
@@ -28,13 +28,15 @@ class MainMenu {
 options
 }
 class Options {
+enableSound
+disableSound
 onOptionSelected()
 }
 
-SplashScreen "1" *-- "1" MainMenu : preludes >
-MainMenu "1" *-- "1" MainGame : starts >
-MainMenu "1" *-- "1" Options : displays >
-MainGame "1" *-- "1" MainMenu : exits to >
-Options "1" *-- "1" MainMenu : exits to >
+SplashScreen "1" --> "1" MainMenu : preludes >
+MainMenu "1" --> "1" MainGame : starts >
+MainMenu "1" --> "1" Options : displays >
+MainGame "1" --> "1" MainMenu : exits to >
+Options "1" --> "1" MainMenu : exits to >
 
 @enduml

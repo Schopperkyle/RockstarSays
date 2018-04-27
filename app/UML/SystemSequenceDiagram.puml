@@ -6,27 +6,29 @@ participant Slash
 
 group Rockstar Application
 User -> Slash: Start
-note right: With Prolog Screen
+note right: With Splash Screen
 User <- Slash: Application Starts
 
 alt Choose/Select Difficulty
 User -> Slash: Selcts Difficulty
 note right: Easy, Medium, Hard
 User <- Slash: Starts Game with Selected Difficulty
+User -> Slash: Disable Sound
+User <- Slash: Starts Game weith Sound Option
 end
 
 loop User Selcts Button Sequence
-User <- Slash: Plays a Tone
-User -> Slash: Selects Appropriate Tone (Button)
+User <- Slash: Highlights a Button
+User -> Slash: Selects Appropriate Button
 
 alt Win
 User -> Slash: Reaches Predetermined Score
-note right: Determined by Difficulty
+
 User <- Slash: Displays Winning Toast
 end
 
 alt Lose
-User -> Slash: Selects Wrong Tone (Button)
+User -> Slash: Selects Wrong Button
 User <- Slash: Displays Score
 end
 
