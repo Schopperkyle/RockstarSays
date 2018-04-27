@@ -77,39 +77,24 @@
         android:layout_gravity="left"
         android:textColor="#cccccc"/>
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <Button
+        android:id="@+id/enableSound"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:text="Enable"
+        android:layout_marginLeft="10dp"/>
 
-        <RadioButton
-            android:id="@+id/Enable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enable"
-            android:textSize="20sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:textColor="#cccccc"
-            android:buttonTint="#cccccc"/>
-
-        <RadioButton
-            android:id="@+id/Disable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Disable"
-            android:textSize="20sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:textColor="#cccccc"
-            android:buttonTint="#cccccc"/>
-
-    </RadioGroup>
+    <Button
+        android:id="@+id/disableSound"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dp"
+        android:text="Disable" />
 
     <Button
         android:id="@+id/SaveOptions"
         android:layout_width="130dip"
-        android:layout_height="60dip"
+        android:layout_height="55dip"
         android:layout_marginTop="0dp"
         android:layout_gravity="center_horizontal"
         android:text="Save"

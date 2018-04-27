@@ -12,7 +12,9 @@ import java.io.IOException;
 
 public class MainMenu extends AppCompatActivity {
 
-    MediaPlayer ring;
+    static MediaPlayer ring;
+    public static boolean soundOn = true;
+    boolean playing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,10 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View arg) {
                 Intent startGame = new Intent(MainMenu.this, MainActivity.class);
                 startActivity(startGame);
-                playMusic(arg);
+                if (soundOn && !(playing)) {
+                    playMusic(arg);
+                    playing = true;
+                }
             }
         });
 

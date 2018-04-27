@@ -1,5 +1,6 @@
 package edu.auburn.eng.csse.comp3710.spring2018.Rockstars;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -14,42 +15,78 @@ public class Options extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options);
 
-        RadioButton enable = (RadioButton) findViewById(R.id.Enable);
-        enable.setOnClickListener(new View.OnClickListener() {
+//        RadioButton enable = (RadioButton) findViewById(R.id.Enable);
+//        enable.setOnClickListener(new View.OnClickListener() {
+//
+//            public void onClick(View v) {
+//
+//                MainMenu m = new MainMenu();
+//
+//                boolean selected;
+//                selected = ((RadioButton) v).isChecked();
+//
+//                if (selected) {
+//                    if (!m.ring.isPlaying()) {
+//                        m.ring.start();
+//                    } else {
+//                        m.ring.pause();
+//                    }
+//                }
+//            }
+//        });
+//
+//        RadioButton disable = (RadioButton) findViewById(R.id.Disable);
+//        disable.setOnClickListener(new View.OnClickListener() {
+//
+//            public void onClick(View v) {
+//
+//                MainMenu m = new MainMenu();
+//
+//                boolean selected;
+//                selected = ((RadioButton) v).isChecked();
+//
+//                if (selected) {
+//                    if (m.ring.isPlaying()) {
+//                        m.ring.pause();
+//                    } else {
+//                        m.ring.start();
+//                    }
+//                }
+//            }
+//        });
 
-            public void onClick(View v) {
+        Button enableSound;
+        enableSound = (Button) findViewById(R.id.enableSound);
+        enableSound.setOnClickListener(new View.OnClickListener() {
 
-                MainMenu m = new MainMenu();
-
-                boolean selected;
-                selected = ((RadioButton) v).isChecked();
-
-                if (selected) {
-                    if (!m.ring.isPlaying()) {
-                        m.ring.start();
-                    } else {
-                        m.ring.pause();
-                    }
+            @Override
+            public void onClick(View arg) {
+                //Intent startGame = new Intent(Options.this, MainActivity.class);
+                //startActivity(startGame);
+                //playMusic(arg);
+                MainMenu.soundOn = true;
+                if (!MainMenu.ring.isPlaying()) {
+                    MainMenu.ring.start();
+                } else {
+                    MainMenu.ring.pause();
                 }
             }
         });
 
-        RadioButton disable = (RadioButton) findViewById(R.id.Disable);
-        disable.setOnClickListener(new View.OnClickListener() {
+        Button disableSound;
+        disableSound = (Button) findViewById(R.id.disableSound);
+        disableSound.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View v) {
-
-                MainMenu m = new MainMenu();
-
-                boolean selected;
-                selected = ((RadioButton) v).isChecked();
-
-                if (selected) {
-                    if (m.ring.isPlaying()) {
-                        m.ring.pause();
-                    } else {
-                        m.ring.start();
-                    }
+            @Override
+            public void onClick(View arg) {
+                //Intent startGame = new Intent(Options.this, MainActivity.class);
+                //startActivity(startGame);
+                //playMusic(arg);
+                MainMenu.soundOn = false;
+                if (MainMenu.ring.isPlaying()) {
+                    MainMenu.ring.pause();
+                } else {
+                    MainMenu.ring.start();
                 }
             }
         });
