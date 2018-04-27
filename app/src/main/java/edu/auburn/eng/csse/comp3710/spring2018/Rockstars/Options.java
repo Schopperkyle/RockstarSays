@@ -23,8 +23,6 @@ public class Options extends AppCompatActivity {
                 MainMenu.soundOn = true;
                 if (!MainMenu.ring.isPlaying()) {
                     MainMenu.ring.start();
-                } else {
-                    MainMenu.ring.pause();
                 }
             }
         });
@@ -39,9 +37,8 @@ public class Options extends AppCompatActivity {
                 MainMenu.soundOn = false;
                 if (MainMenu.ring.isPlaying()) {
                     MainMenu.ring.pause();
-                } else {
-                    MainMenu.ring.start();
                 }
+
             }
         });
         
