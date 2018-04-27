@@ -6,7 +6,8 @@ Description: Rockstar Says is an app with similar functionality to that of the c
              then repeat which button the system highlights. After each correct answer by the user,
              the system will add an additional button to the sequence. The game will continue until
              the user selects the buttons in the wrong sequence, or until the user wins by reaching level 5.
+             *** There is music, so beware of your computer volume before playing ***
 
 Special Instructions to build app: None
 
-List of known bugs:
+List of known bugs: No "known" bugs

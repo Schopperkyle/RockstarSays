@@ -15,55 +15,13 @@ public class Options extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options);
 
-//        RadioButton enable = (RadioButton) findViewById(R.id.Enable);
-//        enable.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View v) {
-//
-//                MainMenu m = new MainMenu();
-//
-//                boolean selected;
-//                selected = ((RadioButton) v).isChecked();
-//
-//                if (selected) {
-//                    if (!m.ring.isPlaying()) {
-//                        m.ring.start();
-//                    } else {
-//                        m.ring.pause();
-//                    }
-//                }
-//            }
-//        });
-//
-//        RadioButton disable = (RadioButton) findViewById(R.id.Disable);
-//        disable.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View v) {
-//
-//                MainMenu m = new MainMenu();
-//
-//                boolean selected;
-//                selected = ((RadioButton) v).isChecked();
-//
-//                if (selected) {
-//                    if (m.ring.isPlaying()) {
-//                        m.ring.pause();
-//                    } else {
-//                        m.ring.start();
-//                    }
-//                }
-//            }
-//        });
-
         Button enableSound;
         enableSound = (Button) findViewById(R.id.enableSound);
         enableSound.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg) {
-                //Intent startGame = new Intent(Options.this, MainActivity.class);
-                //startActivity(startGame);
-                //playMusic(arg);
+
                 MainMenu.soundOn = true;
                 if (!MainMenu.ring.isPlaying()) {
                     MainMenu.ring.start();
@@ -79,9 +37,7 @@ public class Options extends AppCompatActivity {
 
             @Override
             public void onClick(View arg) {
-                //Intent startGame = new Intent(Options.this, MainActivity.class);
-                //startActivity(startGame);
-                //playMusic(arg);
+
                 MainMenu.soundOn = false;
                 if (MainMenu.ring.isPlaying()) {
                     MainMenu.ring.pause();
